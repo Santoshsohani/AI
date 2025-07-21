@@ -37,7 +37,7 @@ Inference refers to using a trained model to make predictions or decisions using
 **Example** : A spam detection model which is being trained on huge set of spam emails, which can be seen implemented in Gmail or Outlook, such that any new spam email arrives can be flagged as spam
 
 
-# 5. Training
-Training refers to when a model** learns patterns** from a given set of data. Such that any unseen data is given as an input may result in perfect predictions or decision making.
+# 5. Training 
+Training refers to when a model **learns patterns** from a given set of data. Such that any unseen data is given as an input may result in perfect predictions or decision making.
 
 **Example**: A spam detection model will be trained on huge set of spam emails, Such that if any new spam email arrives it may flag that email as an **Spam Email**
