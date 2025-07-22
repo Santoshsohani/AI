@@ -73,7 +73,13 @@ It uses external source such as a database or documents to generate accurate and
 - User Query
 - Similarity Search from a Vector Database
 - Combine user query and retrieved results
-- Generate result from LLM
+- Generate result from LLM2
+
+**Components**
+- User Input
+- Retriever
+- Combiner
+- Generator
 
 # 10. Prompt Engineering
 Prompt engineering is a way of optimizing inputs and guide the AI models to  generate results effectively.
