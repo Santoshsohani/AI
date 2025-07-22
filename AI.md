@@ -82,7 +82,18 @@ It uses external source such as a database or documents to generate accurate and
 - Generator
 
 # 10. Prompt Engineering
-Prompt engineering is a way of optimizing inputs and guide the AI models to  generate results effectively.
-
 Quote : **English is the new programming language**
 This emphasizes how English basically prompting has become a significant entity in the field of Generative AI 
+Prompt engineering is a way of optimizing inputs and guide the AI models to  generate results effectively.
+Its is heavily dependent on the application such as conversation AI tools where the quality of the output depends on how we prompt it.
+
+Explain : **Shot**
+**Methods of Prompting**
+- Zero-Shot Prompting
+- Few-Shot Prompting
+- Role Prompting
+- Chain of Thoughts Prompting
+
+In my expereince I have used prompt engineering in Conversational AI while working on the Model `gpt-4o-mini` Integrated with LangChain & LangGraph built REST API's on top of it.
+
+Finally, I  evaluated prompts using metrics like output completeness, relevance, and hallucination rate — and used prompt chaining and fallback logic to improve reliability.
