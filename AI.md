@@ -97,3 +97,43 @@ Explain : **Shot**
 In my expereince I have used prompt engineering in Conversational AI while working on the Model `gpt-4o-mini` Integrated with LangChain & LangGraph built REST API's on top of it.
 
 Finally, I  evaluated prompts using metrics like output completeness, relevance, and hallucination rate — and used prompt chaining and fallback logic to improve reliability.
+
+# 11. Benefits of using pre-trained model
+Building an In-house large language model involves its own cost, which is a tedious task such as:
+- Data Collection
+- Data preparation
+- Infrastructure 
+- Personnel
+Also another important aspect is the accuracy, many of the in-house trained model may lack in accuracy, consistency in results and performance.
+
+Hence using a pre-trained model becomes the right decision,which is already trained  tested by experts, can be accessed by only an API call and moreover user configurable.
+
+Lastly can directly be integrated in an Application
+
+# 12. Comparison of various OpenAI models
+|Model|Main Strengths|Inputs|Outputs|Context Length (Tokens)|Knowledge Cut-off Date|Typical Use Case|
+|---|---|---|---|---|---|---|
+|GPT-4.1|General-purpose, powerful|Text, images|Text|Up to 1,047,576|Not specified (likely newer than GPT-4o)|Complex text/image tasks|
+|GPT-4.1 mini|Fast, affordable, versatile|Text, images|Text|Up to 1,047,576|Not specified|General tasks, cost-sensitive|
+|GPT-4.1 nano|Fastest, cheapest|Text, images|Text|Up to 1,047,576|Not specified|Simple, high-volume tasks|
+|GPT-4o|Multimodal, audio|Text, audio, img|Text, audio|128,000|June 2024|Multimodal, speech applications|
+|GPT-4o mini|Budget multimodal/audio|Text, audio, img|Text, audio|128,000|June 2024|Affordable audio processing|
+|o3|Advanced reasoning|Text, images|Text|200,000|April 16, 2025|Coding, logic, scientific tasks|
+|o4-mini|Affordable reasoning|Text, images|Text|200,000|Not specified (likely same as o3)|Reasoning at scale|
+|Whisper|Audio transcription|Audio|Text|Not applicable|Not specified|Speech-to-text, translation|
+|Sora|Video generation|Text, img, video|Video|Not specified|Not specified|Short video creation|
+|DALL-E|Image generation|Text|Images|Not applicable|Not specified|Creative/design|
+
+# 13.Token
+Token can be either a word or a character, 
+Example : `Hello , World` 3 Tokens
+
+Approximately:  1 token is almost 4 Characters
+
+# 14. Context Length
+While interacting with an AI model - The number of tokens which can be given as an input is limited, This is called as **Context Length** 
+The Context Length comprises of:
+- Input Query
+- System Prompt
+- Previous of History of conversation (When part of a multi-turn chat)
+
