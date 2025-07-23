@@ -137,3 +137,4 @@ The Context Length comprises of:
 - System Prompt
 - Previous of History of conversation (When part of a multi-turn chat)
 
+# 15. Limitations & Considerations
