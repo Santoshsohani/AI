@@ -152,3 +152,15 @@ Using a Large Language model which is pre-trained is benefecial but comes with i
 -  Fine Tuning vs Prompt Engineering: You can either fine tune an existing model which is costlier where as one can use RAG + Tool capabilties (Mostly Used)
 -  Integration Strategy: Plan your system architecure accordingly- choose the right model based upon the usecase
 
+# 16.Chat Completion Model
+The Chat completion model is an large language model which is specially designed for chat based conversations, It manages the chat in a structure, handles context for multi turn conversations. 
+OpenAI provides various models whcih are chat completion.
+**Roles in Chat Completion Model**
+1. system: Represents intructions given, How the assistant should behave
+2. user: Represents user query for the assistant
+3. assistant: Represents the response provided by assistant for the user query
+
+Chat Completion model are typically used for the applications like:
+- Chatbot
+- Message engine
+- Customer Support.
