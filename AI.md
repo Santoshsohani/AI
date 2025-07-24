@@ -137,4 +137,18 @@ The Context Length comprises of:
 - System Prompt
 - Previous of History of conversation (When part of a multi-turn chat)
 
-# 15. Limitations & Considerations
+# 15. Limitations & Considerations while using an Pre-trained Model
+Using a Large Language model which is pre-trained is benefecial but comes with its own limitations and considerations
+**Limitations**
+- Lack of context awareness
+- Static Knowledge
+- No domain specific knowledge
+- Hallucinations
+- Token Limit
+- Cost
+  
+**Considerations**
+-  Use case Suitabilty: LLM's are good at Text generations, summarizations but not best suited for computing & decision making.
+-  Fine Tuning vs Prompt Engineering: You can either fine tune an existing model which is costlier where as one can use RAG + Tool capabilties (Mostly Used)
+-  Integration Strategy: Plan your system architecure accordingly- choose the right model based upon the usecase
+
