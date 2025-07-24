@@ -155,6 +155,7 @@ Using a Large Language model which is pre-trained is benefecial but comes with i
 # 16.Chat Completion Model
 The Chat completion model is an large language model which is specially designed for chat based conversations, It manages the chat in a structure, handles context for multi turn conversations. 
 OpenAI provides various models whcih are chat completion.
+
 **Roles in Chat Completion Model**
 1. system: Represents intructions given, How the assistant should behave
 2. user: Represents user query for the assistant
