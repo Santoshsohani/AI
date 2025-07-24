@@ -165,3 +165,35 @@ Chat Completion model are typically used for the applications like:
 - Chatbot
 - Message engine
 - Customer Support.
+
+# 17. Tokens
+Tokens are the smallest entity which is processed by an Large Language Model - Tokens can be a word, sub-word or even a punctuation makrks.
+Open AI Uses Byte Pair Encoding (BPE) Tokenization.
+| Input                                          | Approx. Token Count |
+| ---------------------------------------------- | ------------------- |
+| `Hello world!`                                 | 3 tokens            |
+| `The quick brown fox jumps over the lazy dog.` | 9 tokens            |
+
+**Token Limit**
+Token limit is the number of tokens used which is the combination of input prompt and response generated if the tokens generated execeed the defined limit, then the response may cut-short or throw an error.
+Similarly limit of number of tokens a model can process is called as `context window`
+
+**Counting Tokens**
+One can use python `tiktoken` module to check the number of tokens consumed
+
+```python
+  import tiktoken
+  
+  encoding = tiktoken.encoding_for_model("gpt-3.5-turbo")
+  text = "The quick brown fox jumps over the lazy dog."
+  tokens = encoding.encode(text)
+  print(f"Token count: {len(tokens)}")
+```
+
+**Token Optimization**
+It is the technique which is used to optimize the use of token by reducing it an strategical manner
+- Summarization of previous messages for multi-turn usecases
+- Reduce the uses of redudant text or boiler-plate prompt
+- Structure the system prompt in accurate and compact form
+- Store the conversation history externally - use them wherever required
+
