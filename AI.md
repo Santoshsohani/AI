@@ -208,48 +208,50 @@ Fine-Tuning refers to using an existing Large language model which is trained on
 - The new task is similar to the original task (e.g., fine-tuning BERT for sentiment analysis).
 - The target dataset is small (otherwise, training from scratch may be better).
 
-**Common Interview Questions**
-  
-Conceptual Questions
+**Conceptual Questions**
 
 1. What is fine-tuning, and how does it differ from training from scratch?
-
-Fine-tuning adapts a pre-trained model to a new task, while training from scratch starts with random weights.
+- Fine-tuning adapts a pre-trained model to a new task, while training from scratch starts with random weights.
 
 2. When would you choose fine-tuning over training a new model?
-
-When the target dataset is small, compute resources are limited, or the tasks are similar.
+- When the target dataset is small, compute resources are limited, or the tasks are similar.
 
 3. What are the risks of fine-tuning?
-
-Overfitting, catastrophic forgetting, and suboptimal performance if the new task is too different.
+- Overfitting, catastrophic forgetting, and suboptimal performance if the new task is too different.
 
 4. How do you decide which layers to freeze/unfreeze?
-
-Lower layers capture general features (freeze early layers), while higher layers are task-specific (fine-tune later layers).
+- Lower layers capture general features (freeze early layers), while higher layers are task-specific (fine-tune later layers).
 
 5. How do you choose the learning rate for fine-tuning?
-
-Use a smaller learning rate (e.g., 1e-4 to 1e-5) to avoid overwriting pre-trained weights.
+- Use a smaller learning rate (e.g., 1e-4 to 1e-5) to avoid overwriting pre-trained weights.
 
 **Technical & Implementation Questions**
 
 1. How would you fine-tune BERT for a text classification task?
-
-Add a classification head, freeze BERT layers initially, then unfreeze and fine-tune with a small LR.
+- Add a classification head, freeze BERT layers initially, then unfreeze and fine-tune with a small LR.
 
 2. What is progressive unfreezing?
-
-Gradually unfreezing layers during training to avoid catastrophic forgetting.
+- Gradually unfreezing layers during training to avoid catastrophic forgetting.
 
 3. How do you prevent overfitting when fine-tuning on a small dataset?
-
-Use dropout, weight decay, data augmentation, early stopping, or layer freezing.
+- Use dropout, weight decay, data augmentation, early stopping, or layer freezing.
 
 4. Explain differential learning rates in fine-tuning.
-
-Different layers get different learning rates (higher for later layers, lower for early layers).
+- Different layers get different learning rates (higher for later layers, lower for early layers).
 
 5. How do you evaluate if fine-tuning improved performance?
+- Compare against a baseline (e.g., pre-trained model without fine-tuning or a model trained from scratch).
 
-Compare against a baseline (e.g., pre-trained model without fine-tuning or a model trained from scratch).
+
+| Feature / Concept         | **Overfitting**                                                     | **Catastrophic Forgetting**                                        | **Suboptimal Performance**                                      |
+| ------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------ | --------------------------------------------------------------- |
+| **Definition**            | Model learns training data too well, including noise                | Model forgets previously learned (pre-trained) knowledge           | Model fails to improve or degrades after fine-tuning            |
+| **Cause**                 | Too few training samples, high training epochs, poor regularization | Overwriting pre-trained weights with new data                      | Poor dataset, bad hyperparameters, incompatible loss/objective  |
+| **Impact**                | Good training performance, poor generalization to new data          | Good performance on new task, worse on general knowledge tasks     | Low performance even on fine-tuned task                         |
+| **Symptoms**              | High training accuracy, low validation accuracy                     | Loss of ability to do tasks the base model could do                | Weak results across train/test, unstable or unexpected output   |
+| **When it occurs**        | When the model memorizes data instead of learning patterns          | When new training dominates over pre-trained weights               | When training setup, data, or objective is not optimal          |
+| **Detection**             | Training vs validation loss gap                                     | Regression on general evaluation tasks (e.g., GLUE, MMLU)          | Performance benchmarks show minimal/no gain or loss             |
+| **Mitigation Techniques** | Early stopping, dropout, regularization, more data                  | Use adapter layers, low learning rate, replay or EWC               | Tune hyperparameters, clean data, use better evaluation         |
+| **Real-world Example**    | Fine-tuned model fails on unseen customer queries                   | Model fine-tuned on legal docs can't do general question answering | Model fine-tuned for chatbot gives generic or off-topic replies |
+| **Evaluation Strategy**   | Use held-out validation set or cross-validation                     | Evaluate on both task-specific and general test sets               | Perform ablation tests and baseline comparisons                 |
+
