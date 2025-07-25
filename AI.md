@@ -213,33 +213,43 @@ Fine-Tuning refers to using an existing Large language model which is trained on
 Conceptual Questions
 
 1. What is fine-tuning, and how does it differ from training from scratch?
+
 Fine-tuning adapts a pre-trained model to a new task, while training from scratch starts with random weights.
 
 2. When would you choose fine-tuning over training a new model?
+
 When the target dataset is small, compute resources are limited, or the tasks are similar.
 
 3. What are the risks of fine-tuning?
+
 Overfitting, catastrophic forgetting, and suboptimal performance if the new task is too different.
 
 4. How do you decide which layers to freeze/unfreeze?
+
 Lower layers capture general features (freeze early layers), while higher layers are task-specific (fine-tune later layers).
 
 5. How do you choose the learning rate for fine-tuning?
+
 Use a smaller learning rate (e.g., 1e-4 to 1e-5) to avoid overwriting pre-trained weights.
 
 **Technical & Implementation Questions**
 
 1. How would you fine-tune BERT for a text classification task?
+
 Add a classification head, freeze BERT layers initially, then unfreeze and fine-tune with a small LR.
 
 2. What is progressive unfreezing?
+
 Gradually unfreezing layers during training to avoid catastrophic forgetting.
 
 3. How do you prevent overfitting when fine-tuning on a small dataset?
+
 Use dropout, weight decay, data augmentation, early stopping, or layer freezing.
 
 4. Explain differential learning rates in fine-tuning.
+
 Different layers get different learning rates (higher for later layers, lower for early layers).
 
 5. How do you evaluate if fine-tuning improved performance?
+
 Compare against a baseline (e.g., pre-trained model without fine-tuning or a model trained from scratch).
